@@ -31,12 +31,12 @@ function generatePassword() {
 
 // INCASE NO IS OPTION PICKED
   
-  if (!islower && !isupper && !isnumb && !isspec) {
+  if (!isLower && !isUpper && !isNumb && !isSpec) {
     console.log("Please pick a character type.")
   return};
 
 // Picking Length for Password
-  var userlength = window.prompt("Enter password length."); 
+  var userlength = window.prompt("Enter password length bewtween 8 and 128."); 
 
 // Password Bad Inputs
   if ( 
@@ -49,12 +49,60 @@ function generatePassword() {
     window.alert("Please enter value between 8 and 128.")
   return};
 
-  // Password Conditions
-  // 4 Positives
+  // Password Conditionals
+  
+  // 4 positives
   if (isLower && isUpper && isNumb && isSpec) {
 
       charset = lowercase.concat(uppercase, numbers, special);
   }
+  
+  // 3 positive
+  else if (isLower && isUpper && isNumb) {
+      charset = lowercase.concat(uppercase, numbers);
+  }
+  else if (isLower && isNumb && isSpec) {
+      charset = lowercase.concat(numbers, special);
+  }
+  else if (isLower && isUpper && isSpec) {
+      charset = lowercase.concat(uppercase, special);
+  }
+  else if (isUpper && isNumb && isSpec) {
+      charset = uppercase.concat(numbers, special);
+  }
+
+  // 2 positive
+  else if (isLower && isUpper) {
+      charset = lowercase.concat(uppercase);
+  } 
+  else if (isLower && isNumb) {
+      charset = lowercase.concat(numbers);
+  } 
+  else if (isLower && isSpec) {
+      charset = lowercase.concat(special);
+  } 
+  else if (isUpper && isNumb) {
+      charset = uppercase.concat(numbers);
+  } 
+  else if (isUpper && isSpec) {
+      charset = uppercase.concat(special);
+  } 
+  else if (isNumb && isSpec) {
+      choices = numbers.concat(special);
+  }
+  // 1 positive
+  else if (isLower) {
+      charset = lowercase;
+  }
+  else if (isUpper) {
+      charset = uppercase;
+  }
+  else if (isNumb) {
+      charset = numbers;
+  }
+  else if (isSpec) {
+      charset = special;
+  };
 
   console.log(charset);
 
