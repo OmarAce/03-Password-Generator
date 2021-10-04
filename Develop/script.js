@@ -106,4 +106,8 @@ function generatePassword() {
 
   console.log(charset);
 
+  for (var i = 0; i < userlength; i++) {
+    var password = charset[math.floor(Math.random() * userlength)];
+  }
+
 }
