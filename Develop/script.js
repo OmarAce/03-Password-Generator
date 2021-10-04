@@ -32,7 +32,7 @@ function generatePassword() {
 // INCASE NO IS OPTION PICKED
   
   if (!isLower && !isUpper && !isNumb && !isSpec) {
-    console.log("Please pick a character type.")
+    alert("Please pick a character type.")
   return};
 
 // Picking Length for Password
@@ -42,11 +42,11 @@ function generatePassword() {
   if ( 
     (userlength.includes(lowercase)) || (userlength.includes(uppercase)) || (userlength.includes(special)) 
     ) {
-    window.alert("Please enter numbers only.")
+    alert("Please enter numbers only.")
   return}
 
   else if (userlength < 8 && userlength > 128) {
-    window.alert("Please enter value between 8 and 128.")
+    alert("Please enter value between 8 and 128.")
   return};
 
   // Password Conditionals
@@ -107,7 +107,7 @@ function generatePassword() {
   console.log(charset);
 
   for (var i = 0; i < userlength; i++) {
-    var password = charset[math.floor(Math.random() * userlength)];
+    var password = charset[Math.floor(Math.random() * userlength)];
   }
 
-}
+return password}
