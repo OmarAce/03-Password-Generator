@@ -36,18 +36,14 @@ function generatePassword() {
   return};
 
 // Picking Length for Password
-  var userlength = window.prompt("Enter password length bewtween 8 and 128."); 
+  var userlength = prompt("Enter password length bewtween 8 and 128."); 
 
 // Password Bad Inputs
-  if ( 
-    (userlength.includes(lowercase)) || (userlength.includes(uppercase)) || (userlength.includes(special)) 
-    ) {
-    alert("Please enter numbers only.")
-  return}
 
-  else if (userlength < 8 && userlength > 128) {
-    alert("Please enter value between 8 and 128.")
-  return};
+if 
+(userlength < 8 || userlength > 128) {
+alert("Please enter a number in the range only.")
+return}
 
   // Password Conditionals
   
@@ -104,10 +100,14 @@ function generatePassword() {
       charset = special;
   };
 
-  console.log(charset);
+  genpass = [];
+  password = "";
 
   for (var i = 0; i < userlength; i++) {
-    var password = charset[Math.floor(Math.random() * userlength)];
+    var randomchar = charset[Math.floor(Math.random() * charset.length)];
+    genpass.push(randomchar);
   }
+
+  password = genpass.join("");
 
 return password}
