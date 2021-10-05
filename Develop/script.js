@@ -28,6 +28,7 @@ var charset;
 function generatePassword() {
 
 // Picking charsets for Password
+
   var isLower = window.confirm("Use lowercase characters?");
   var isUpper = window.confirm("Use uppercase characters?");
   var isNumb = window.confirm("Use numbers?");
@@ -39,15 +40,23 @@ function generatePassword() {
     alert("Please pick a character type.")
   return};
 
-// Picking Length for Password
+
+  // Picking Length for Password
+
   var userlength = prompt("Enter password length bewtween 8 and 128."); 
 
-// Password Invalid Length
+  // Invalid Character Check
 
-if 
-(userlength < 8 || userlength > 128) {
-alert("Please enter a number in the range only.")
-return}
+  if (isNaN(userlength)) {
+    alert("Please enter numbers only.");
+  }
+
+  // Invalid Password Length
+
+  else if 
+  (userlength < 8 || userlength > 128) {
+    alert("Please enter a number in the range only.");
+  return}
 
   // Password Conditionals
   // Generates charset based upon user selection for password generation
