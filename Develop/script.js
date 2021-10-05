@@ -6,12 +6,16 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+
+// Output of Password
+  passwordText.value = password; 
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Charsets Choices
 
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -23,7 +27,7 @@ var charset;
 
 function generatePassword() {
 
-// Picking charset for Password
+// Picking charsets for Password
   var isLower = window.confirm("Use lowercase characters?");
   var isUpper = window.confirm("Use uppercase characters?");
   var isNumb = window.confirm("Use numbers?");
@@ -38,7 +42,7 @@ function generatePassword() {
 // Picking Length for Password
   var userlength = prompt("Enter password length bewtween 8 and 128."); 
 
-// Password Bad Inputs
+// Password Invalid Length
 
 if 
 (userlength < 8 || userlength > 128) {
@@ -46,7 +50,8 @@ alert("Please enter a number in the range only.")
 return}
 
   // Password Conditionals
-  
+  // Generates charset based upon user selection for password generation
+
   // 4 positives
   if (isLower && isUpper && isNumb && isSpec) {
 
@@ -100,14 +105,19 @@ return}
       charset = special;
   };
 
+  // Generated Characters placed in array
   genpass = [];
+
+  // Password variable defined to later have generated characters be joined into
   password = "";
 
+  //  Loop for character generation based on userlength and chosen character set
   for (var i = 0; i < userlength; i++) {
     var randomchar = charset[Math.floor(Math.random() * charset.length)];
     genpass.push(randomchar);
   }
 
+  // Joins generated characters into password
   password = genpass.join("");
 
 return password}
