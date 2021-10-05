@@ -9,7 +9,6 @@ function writePassword() {
 
 // Output of Password
   passwordText.value = password; 
-
 }
 
 // Add event listener to generate button
