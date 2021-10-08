@@ -116,6 +116,9 @@ function generatePassword() {
   // Generated Characters placed in array
   genpass = [];
 
+  // Password variable defined to later have generated characters be joined into
+  password = "";
+
   //  Loop for character generation based on userlength and chosen character set
   for (var i = 0; i < userlength; i++) {
     var randomChar = charset[Math.floor(Math.random() * charset.length)];
